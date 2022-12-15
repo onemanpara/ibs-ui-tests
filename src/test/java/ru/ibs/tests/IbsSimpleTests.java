@@ -1,7 +1,6 @@
 package ru.ibs.tests;
 
 import com.codeborne.selenide.ClickOptions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.ValueSource;
