@@ -100,7 +100,7 @@ gradle clean test
 Report*</strong></code>, кликнув по которому, откроется страница с сформированным html-отчетом.*
 
 <p align="center">
-  <img src="images/screens/Jenkins2.jpg" alt="Jenkins2" width="1000">
+  <img src="images/screens/jenkins2.jpg" alt="Jenkins2" width="1000">
 </p>
 
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15-onemanpara-IbsUI/allure/)
