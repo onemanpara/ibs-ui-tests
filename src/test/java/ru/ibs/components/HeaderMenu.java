@@ -14,7 +14,7 @@ public class HeaderMenu {
     private static ElementsCollection socialsLink = $$(".navigation-socials a");
 
 
-    public HeaderMenu checkSocialNetworksInIsVisible() {
+    public HeaderMenu checkSocialNetworksInBurgerMenuIsVisible() {
         Integer sourceSocials = socialsLink.size();
         assertThat(sourceSocials).isEqualTo(5);
         for (int i = 0; i < sourceSocials; i++) {

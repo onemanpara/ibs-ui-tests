@@ -1,6 +1,7 @@
 package ru.ibs.tests;
 
 import com.codeborne.selenide.ClickOptions;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -11,11 +12,14 @@ import ru.ibs.data.Cities;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import ru.ibs.data.DataGenerator;
+import ru.ibs.helpers.DriverUtils;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.openqa.selenium.logging.LogType.BROWSER;
 import static ru.ibs.components.FeedBackFormInFooter.*;
 
 public class IbsSimpleTests extends TestBase {
@@ -177,7 +181,21 @@ public class IbsSimpleTests extends TestBase {
             headerMenu.burgerMenuClick();
         });
         step("Проверяем, что социальные сети видимы", () -> {
-            headerMenu.checkSocialNetworksInIsVisible();
+            headerMenu.checkSocialNetworksInBurgerMenuIsVisible();
+        });
+        System.out.println(Selenide.getWebDriverLogs(BROWSER));
+    }
+
+    @Test
+    @DisplayName("В консоли нет ошибок")
+    void consoleShouldNotHaveErrorsTest() {
+        step("Открываем главную страницу'", () -> {
+            open("https://ibs.ru/");
+        });
+        step("Проверяем, что в логах консоли нет ошибок (строк с \"SEVERE\")", () -> {
+            String consoleLogs = DriverUtils.getConsoleLogs();
+            String errorText = "SEVERE";
+            assertThat(consoleLogs).doesNotContain(errorText);
         });
     }
 }
