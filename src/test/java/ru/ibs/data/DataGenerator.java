@@ -18,5 +18,4 @@ public class DataGenerator {
             invalidEmail = fakerRu.name().firstName(),
             invalidPhone = fakerRu.phoneNumber().subscriberNumber(10);
 
-
 }

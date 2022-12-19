@@ -8,16 +8,15 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FeedBackFormInFooter {
 
-    protected static SelenideElement
-            nameInput = $("#name");
-    protected static SelenideElement companyInput = $("#company");
-    protected static SelenideElement phoneInput = $("#phone");
-    protected static SelenideElement emailInput = $("#email");
-    protected static SelenideElement messageInput = $("#message");
-    protected static SelenideElement submitButton = $("#feedback button[type=submit]");
-    protected static SelenideElement checkBoxAgree = $("input[name=agree]");
-
-    protected static SelenideElement resultMessage = $(".feedback__result");
+    protected static final SelenideElement
+            nameInput = $("#name"),
+            companyInput = $("#company"),
+            phoneInput = $("#phone"),
+            emailInput = $("#email"),
+            messageInput = $("#message"),
+            submitButton = $("#feedback button[type=submit]"),
+            checkBoxAgree = $("input[name=agree]"),
+            resultMessage = $(".feedback__result");
 
     public FeedBackFormInFooter setName(String name) {
         nameInput.setValue(name);

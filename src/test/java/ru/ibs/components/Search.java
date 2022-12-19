@@ -9,14 +9,14 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class Search {
 
-    private static SelenideElement
+    private static final SelenideElement
             searchInputInHeader = $("input[placeholder=\"Поиск по сайту\"]"),
             searchInputAtSearchPage = $(".search-page").$("input[placeholder=\"Поиск по сайту\"]"),
             searchButtonInHeader = $(".js-header-search"),
             firstPopularSearchRequest = $(".search-popular__items a"),
             firstLastSearchRequest = $(".search-last__items a");
 
-    private static ElementsCollection
+    private static final ElementsCollection
             popularSearchRequests = $$(".search-popular__items a"),
             lastSearchRequests = $$(".search-last__items a");
 
